@@ -1,5 +1,8 @@
 Revision history for Perl module Mail::File.
 
+0.06	19/03/2005
+	- reinserted structures
+
 0.05	26/01/2005
 	- removed unnecessary comments
 	- removed uncecessary Exporter functionality

@@ -1,10 +1,10 @@
 package Mail::File;
 
-#use warnings;
-#use strict;
+use warnings;
+use strict;
 
-use vars qw($VERSION);
-$VERSION = '0.05';
+use vars qw($VERSION $AUTOLOAD);
+$VERSION = '0.06';
 
 #----------------------------------------------------------------------------
 
@@ -133,7 +133,7 @@ sub new {
 
 	# store the x-headers
 	my @xheaders = grep /^X-/, keys %hash;
-	foreach $xhdr (@xheaders) { $atts->{$xhdr} = $hash{$xhdr} }
+	foreach my $xhdr (@xheaders) { $atts->{$xhdr} = $hash{$xhdr} }
 
 	# attempt to create the reports directory if necessary
 	my $file = basename($atts->{template});
@@ -208,7 +208,7 @@ sub send {
 						$self->{Body});
 
 	# Build the message
-	$msg  = "From: $self->{From}\n" .
+	my $msg  = "From: $self->{From}\n" .
 			"To: $self->{To}\n" .
 			"Subject: $self->{Subject}\n";
 	$msg .= "Cc: $self->{Cc}\n"				if($self->{Cc});
@@ -216,12 +216,12 @@ sub send {
 
 	# store the x-headers
 	my @xheaders = grep /^X-/, keys %$self;
-	foreach $xhdr (@xheaders) { $msg .= "$xhdr: $self->{$xhdr}\n"; }
+	foreach my $xhdr (@xheaders) { $msg .= "$xhdr: $self->{$xhdr}\n"; }
 
 	$msg .= "\n$self->{Body}\n";
 
 	my ($template,$suffix) = ($self->{template} =~ /(.*)(\.\w+)$/);
-	($fh, $filename) = tempfile( $template, SUFFIX => $suffix, UNLINK => 0 );
+	my ($fh, $filename) = tempfile( $template, SUFFIX => $suffix, UNLINK => 0 );
 	print $fh $msg;
 	undef $fh;
 
