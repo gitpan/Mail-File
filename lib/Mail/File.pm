@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.06';
+$VERSION = '0.07';
 
 #----------------------------------------------------------------------------
 
@@ -16,7 +16,7 @@ Mail::File - mail module which writes to a flat file.
 
   use Mail::File;
 
-  my $mail = new Mail::File(template => 'mailXXXX.tmp');
+  my $mail = Mail::File->new(template => 'mailXXXX.tmp');
   $mail->From('me@example.com');
   $mail->To('you@example.com');
   $mail->Cc('Them <them@example.com>');
@@ -38,7 +38,7 @@ Mail::File - mail module which writes to a flat file.
 	template   => 'mailXXXX.tmp'
   );
 
-  my $mail = new Mail::File(%hash);
+  my $mail = Mail::File->new(%hash);
   $mail->send;
 
 =head1 DESCRIPTION
@@ -73,7 +73,7 @@ use File::Temp	qw(tempfile);
 #Variables
 #############################################################################
 
-my @autosubs = qw( From To	Cc	Bcc	Subject	Body );
+my @autosubs = qw( From To Cc Bcc Subject Body );
 my %autosubs = map {$_ => 1} @autosubs;
 
 #----------------------------------------------------------------------------
@@ -202,7 +202,7 @@ sub send {
 	my ($self) = @_;
 
 	# we need a basic message fields
-	return 0	unless(	$self->{From} && 
+	return undef	unless(	$self->{From} && 
 						$self->{To} && 
 						$self->{Subject} && 
 						$self->{Body});
@@ -257,12 +257,18 @@ May add the ability to handle MIME content headers and attachments.
   File::Path
   File::Temp
 
+=head1 DSLIP
+
+  b - beta
+  d - Developer
+  p - Perl only
+  O - Object oriented
+  p - Standard Perl
+
 =head1 AUTHOR
 
 Barbie, C< <<barbie@cpan.org>> >
 for Miss Barbell Productions, L<http://www.missbarbell.co.uk>
-
-Birmingham Perl Mongers, L<http://birmingham.pm.org/>
 
 =head1 COPYRIGHT AND LICENSE
 

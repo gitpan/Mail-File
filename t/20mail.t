@@ -31,7 +31,7 @@ my %hash = (
   );
 
 mkpath $path;
-my $mail = new Mail::File(%hash);
+my $mail = Mail::File->new(%hash);
 
 is($mail->From(),'me@example.com');
 is($mail->To(),'you@example.com');

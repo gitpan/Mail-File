@@ -19,8 +19,8 @@ X-Header-1: This is a test
 Yadda Yadda Yadda
 !;
 
-mkpath $path;
-my $mail = new Mail::File(template => $temp);
+mkpath($path);
+my $mail = Mail::File->new(template => $temp);
 isa_ok($mail,'Mail::File');
 
 $mail->From('me@example.com');

@@ -43,6 +43,14 @@ plain text mails to send later.
 I have patched my own version of Test::Reporter, and will hopefully be able
 to patch the official version, once this distribution is released.
 
+DSLIP
+
+  b - beta
+  d - Developer
+  p - Perl only
+  O - Object oriented
+  p - Standard Perl
+
 AUTHOR
 
 Barbie <barbie@cpan.org>

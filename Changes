@@ -1,5 +1,9 @@
 Revision history for Perl module Mail::File.
 
+0.07	21/03/2005
+	- more tests to fill the holes Devel::Cover found.
+	- Added DSLIP information
+
 0.06	19/03/2005
 	- reinserted structures
 
