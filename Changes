@@ -1,0 +1,27 @@
+Revision history for Perl module Mail::File.
+
+0.05	26/01/2005
+	- removed unnecessary comments
+	- removed uncecessary Exporter functionality
+
+0.04  Tue Oct 28 13:41:16 GMTDT 2003
+	- extracated the cpan-testing directory out of Mail-File. This is now
+	  going to be a special distribution of it's own.
+	- Message now Body.
+	- X-Headers can be passed via the hash.
+	- sprintf overhead removed ... no idea why I did that!
+
+0.03  Wed Oct  8 13:04:18 GMTDT 2003
+	- POD updates
+
+0.02  Tue Oct  7 17:37:44 GMTDT 2003
+	- cpan-testing files updated to use /.smoke/mailfiles 
+	  for reports directory.
+	- removed move-mailfiles.pl as the change above renders
+	  it obsolete.
+	- Mail::File creates the directory of the template (if
+	  there is one) if it can.
+
+0.01  Mon Oct  6 13:28:06 GMTDT 2003
+	- original version;
+
