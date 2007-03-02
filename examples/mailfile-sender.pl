@@ -125,7 +125,6 @@ Birmingham Perl Mongers, L<http://birmingham.pm.org/>
 =head1 COPYRIGHT AND LICENSE
 
   Copyright (C) 2003-2005 Barbie for Miss Barbell Productions
-  All Rights Reserved.
 
   This module is free software; you can redistribute it and/or 
   modify it under the same terms as Perl itself.

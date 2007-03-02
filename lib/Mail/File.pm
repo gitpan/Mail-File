@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.07';
+$VERSION = '0.08';
 
 #----------------------------------------------------------------------------
 
@@ -68,13 +68,13 @@ A mail module to write mail messages to a plain text flat file.
 use File::Basename;
 use File::Path;
 use File::Temp	qw(tempfile);
+use Time::Piece;
 
 #############################################################################
 #Variables
 #############################################################################
 
-my @autosubs = qw( From To Cc Bcc Subject Body );
-my %autosubs = map {$_ => 1} @autosubs;
+my %autosubs = map {$_ => 1} qw( From To Cc Bcc Subject Body );
 
 #----------------------------------------------------------------------------
 
@@ -135,11 +135,6 @@ sub new {
 	my @xheaders = grep /^X-/, keys %hash;
 	foreach my $xhdr (@xheaders) { $atts->{$xhdr} = $hash{$xhdr} }
 
-	# attempt to create the reports directory if necessary
-	my $file = basename($atts->{template});
-	my ($path) = ($atts->{template} =~ /(.*)$file/);
-	mkpath($path)	if($path && !-d $path);
-
 	# create the object
 	bless $atts, $self;
 	return $atts;
@@ -186,7 +181,7 @@ Returns undef if header cannot be added.
 
 sub XHeader {
 	my ($self,$xheader,$value) = @_;
-	return undef	unless($xheader =~ /^X-/);
+	return	unless($xheader =~ /^X-/);
 	$value ? $self->{$xheader} = $value : $self->{$xheader};
 }
 
@@ -201,16 +196,27 @@ Really just writes to a file.
 sub send {
 	my ($self) = @_;
 
+	# create output directory if necessary
+	if((my $path = dirname($self->{template})) ne '.') {
+        eval { mkpath($path) };
+        return  if($@);
+    }
+
 	# we need a basic message fields
-	return undef	unless(	$self->{From} && 
-						$self->{To} && 
-						$self->{Subject} && 
-						$self->{Body});
+	return	unless(	$self->{From} && 
+					$self->{To} && 
+					$self->{Subject} && 
+					$self->{Body});
+
+    # use the date we write the file
+    my $t = localtime;
+    my $date = $t->strftime();
 
 	# Build the message
-	my $msg  = "From: $self->{From}\n" .
-			"To: $self->{To}\n" .
-			"Subject: $self->{Subject}\n";
+	my $msg  =  "From: $self->{From}\n" .
+		    	"To: $self->{To}\n" .
+			    "Subject: $self->{Subject}\n".
+                "Date: $date\n";
 	$msg .= "Cc: $self->{Cc}\n"				if($self->{Cc});
 	$msg .= "Bcc: $self->{Bcc}\n"			if($self->{Bcc});
 
@@ -265,17 +271,34 @@ May add the ability to handle MIME content headers and attachments.
   O - Object oriented
   p - Standard Perl
 
+=head1 BUGS, PATCHES & FIXES
+
+There are no known bugs at the time of this release. However, if you spot a
+bug or are experiencing difficulties that are not explained within the POD
+documentation, please submit a bug to the RT system (see link below). However,
+it would help greatly if you are able to pinpoint problems or even supply a 
+patch. 
+
+Fixes are dependant upon their severity and my availablity. Should a fix not
+be forthcoming, please feel free to (politely) remind me by sending an email
+to barbie@cpan.org .
+
+RT: L<http://rt.cpan.org/Public/Dist/Display.html?Name=Mail-File>
+
 =head1 AUTHOR
 
-Barbie, C< <<barbie@cpan.org>> >
-for Miss Barbell Productions, L<http://www.missbarbell.co.uk>
+  Barbie, <barbie@cpan.org>
+  for Miss Barbell Productions, <http://www.missbarbell.co.uk>
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2003-2005 Barbie for Miss Barbell Productions
-  All Rights Reserved.
+  Copyright © 2003-2007 Barbie for Miss Barbell Productions.
 
-  This module is free software; you can redistribute it and/or 
-  modify it under the same terms as Perl itself.
+  This library is free software; you can redistribute it and/or modify it under
+  the same terms as Perl itself, using the Artistic License.
+
+The full text of the licenses can be found in the Artistic file included with 
+this distribution, or in perlartistic file as part of Perl installation, in 
+the 5.8.1 release or later.
 
 =cut

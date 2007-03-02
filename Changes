@@ -1,5 +1,20 @@
 Revision history for Perl module Mail::File.
 
+0.08	02/03/2007
+	- Added Time::Piece to the mix to ensure we have a valid date written
+	  to the file to conform to the Internet Mail RFC specs.
+	- Directory created only when we "send" the mail to disk. Also now
+	  checks we have created the directory before writing the file.
+	- Refined tests.
+	- Handwritten META.yml to conform to current specs.
+	- Changed all instances of LICENCE to LICENSE.
+	- Added META.yml test script.
+	- Added LICENSE and Artistic files.
+	- Added an examples directory. Nothing in it yet, except a request
+	  for interesting scripts.
+	- POD/README updates
+	- Devel::Cover - 99.2%
+
 0.07	21/03/2005
 	- more tests to fill the holes Devel::Cover found.
 	- Added DSLIP information

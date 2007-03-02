@@ -1,7 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
 
-use Test::More tests => 9;
+use Test::More tests => 15;
 
 use Mail::File;
 use File::Path;
@@ -9,15 +9,15 @@ use File::Path;
 my $path = 'mailfiles';
 my $temp = 'mailfiles/mail-XXXXXX.eml';
 
-my $content = q!From: me@example.com
-To: you@example.com
-Subject: Blah Blah Blah
-Cc: Them <them@example.com>
-Bcc: Us <us@example.com>; anybody@example.com
-X-Header-1: This is a test
-
-Yadda Yadda Yadda
-!;
+my @content = (
+    'From: me@example.com',
+    'To: you@example.com',
+    'Subject: Blah Blah Blah',
+    'Date: ',
+    'Cc: Them <them@example.com>',
+    'Bcc: Us <us@example.com>; anybody@example.com',
+    "X-Header-1: This is a test\n\nYadda Yadda Yadda"
+);
 
 my %hash = (
 	From			=> 'me@example.com',
@@ -49,7 +49,9 @@ open FH, $file or die "Failed to open file [$file]: $!\n";
 {
 	local $/ = undef;
 	my $mailfile = <FH>;
-	is($mailfile,$content);
+    for my $content (@content) {
+        like($mailfile,qr/$content/is,"checking content includes '$content'");
+    }
 }
 close FH;
 	
