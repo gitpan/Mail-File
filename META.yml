@@ -1,32 +1,33 @@
 --- #YAML:1.0
-name:                   Mail-File
-version:                0.08
-abstract:               Write mail messages to a plain text file.
+name:                     Mail-File
+version:                  0.09
+abstract:                 Write mail messages to a plain text file
 author:
   - Barbie <barbie@cpan.org>
 
-license:                perl
-distribution_type:      module
-installdirs:            site
+license:                  artistic_2
+distribution_type:        module
+installdirs:              site
 
 requires:
-  Test::More:           0.47
-  File::Basename:       0
-  File::Path:           0
-  File::Temp:           0
-  Time::Piece:          0
+  perl:                   5.006
+  File::Basename:         0
+  File::Path:             0
+  File::Temp:             0
+  Time::Piece:            0
 recommends:
-  Test::More:           0.47
-  Test::Pod:            1.00
-  Test::Pod::Coverage:  0.08
-  Test::YAML::Meta:     0
+  Test::CPAN::Meta:       0
+  Test::CPAN::Meta::JSON: 0
+  Test::Pod:              1.00
+  Test::Pod::Coverage:    0.08
 build_requires:
-  Test::More:           0.47
+  IO::File:               0
+  Test::More:             0.70
 
 provides:
   Mail::File:
     file:     lib/Mail/File.pm
-    version:  0.08
+    version:  0.09
 no_index:
   directory:
     - t

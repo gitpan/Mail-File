@@ -18,11 +18,20 @@ The distribution requires the following modules:
   File::Basename
   File::Path
   File::Temp
+  Time::Piece
+
+For testing purposes, the following modules are required:
+
+  Test::More
+  IO::File
 
 For testing purposes, the following modules are desireable, but not essential:
 
   Test::Pod
   Test::Pod::Coverage
+  Pod::Coverage
+  Test::CPAN::Meta
+  Test::CPAN::Meta::JSON
 
 INSTALLATION
 
@@ -36,20 +45,9 @@ To install this module type the following:
 CPAN TESTING
 
 This module was initially written to aid me in the CPAN Testing experience
-(see http://testers.cpan.org for further details). Unfortunately the machine
+(see http://cpantesters.org for further details). Unfortunately the machine
 I was testing on didn't have sendmail or SMTP access, so I needed to store
 plain text mails to send later.
-
-I have patched my own version of Test::Reporter, and will hopefully be able
-to patch the official version, once this distribution is released.
-
-DSLIP
-
-  b - beta
-  d - Developer
-  p - Perl only
-  O - Object oriented
-  p - Standard Perl
 
 BUGS, PATCHES & FIXES
 
@@ -59,7 +57,7 @@ documentation, please submit a bug to the RT system (see link below). However,
 it would help greatly if you are able to pinpoint problems or even supply a 
 patch. 
 
-Fixes are dependant upon their severity and my availablity. Should a fix not
+Fixes are dependent upon their severity and my availability. Should a fix not
 be forthcoming, please feel free to (politely) remind me by sending an email
 to barbie@cpan.org .
 
@@ -72,11 +70,7 @@ for Miss Barbell Productions, http://www.missbarbell.co.uk
 
 COPYRIGHT AND LICENSE
 
-Copyright © 2003-2007 Barbie for Miss Barbell Productions.
+Copyright © 2003-2012 Barbie for Miss Barbell Productions.
 
-This library is free software; you can redistribute it and/or modify it under
-the same terms as Perl itself, using the Artistic License.
-
-The full text of the licenses can be found in the Artistic file included with 
-this distribution, or in perlartistic file as part of Perl installation, in 
-the 5.8.1 release or later.
+This module is free software; you can redistribute it and/or
+modify it under the Artistic Licence v2.

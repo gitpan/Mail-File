@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.08';
+$VERSION = '0.09';
 
 #----------------------------------------------------------------------------
 
@@ -53,34 +53,23 @@ mail messages.
 
 Notes that the filename template defaults to 'mail-XXXXXX.eml'.
 
-=head1 ABSTRACT
-
-A mail module to write mail messages to a plain text flat file.
-
 =cut
 
 #----------------------------------------------------------------------------
-
-#############################################################################
-#Library Modules															#
-#############################################################################
+# Library Modules
 
 use File::Basename;
 use File::Path;
 use File::Temp	qw(tempfile);
 use Time::Piece;
 
-#############################################################################
-#Variables
-#############################################################################
+#----------------------------------------------------------------------------
+# Variables
 
 my %autosubs = map {$_ => 1} qw( From To Cc Bcc Subject Body );
 
 #----------------------------------------------------------------------------
-
-#############################################################################
-#Interface Functions														#
-#############################################################################
+# Interface Functions
 
 =head1 METHODS
 
@@ -142,7 +131,7 @@ sub new {
 
 sub DESTROY {}
 
-# -------------------------------------
+#----------------------------------------------------------------------------
 # The Get & Set Methods Interface Subs
 
 =item Accessor Methods
@@ -242,34 +231,9 @@ __END__
 
 =back
 
-=head1 BUGS, PATCHES & FIXES
-
-There are no known bugs at the time of this release. However, if you spot a
-bug or are experiencing difficulties that are not explained within the POD
-documentation, please send an email to barbie@cpan.org or submit a bug to the
-RT system (http://rt.cpan.org/). However, it would help greatly if you are 
-able to pinpoint problems or even supply a patch. 
-
-Fixes are dependant upon their severity and my availablity. Should a fix not
-be forthcoming, please feel free to (politely) remind me.
-
 =head1 TODO
 
 May add the ability to handle MIME content headers and attachments.
-
-=head1 SEE ALSO
-
-  File::Basename
-  File::Path
-  File::Temp
-
-=head1 DSLIP
-
-  b - beta
-  d - Developer
-  p - Perl only
-  O - Object oriented
-  p - Standard Perl
 
 =head1 BUGS, PATCHES & FIXES
 
@@ -279,7 +243,7 @@ documentation, please submit a bug to the RT system (see link below). However,
 it would help greatly if you are able to pinpoint problems or even supply a 
 patch. 
 
-Fixes are dependant upon their severity and my availablity. Should a fix not
+Fixes are dependent upon their severity and my availability. Should a fix not
 be forthcoming, please feel free to (politely) remind me by sending an email
 to barbie@cpan.org .
 
@@ -292,13 +256,9 @@ RT: L<http://rt.cpan.org/Public/Dist/Display.html?Name=Mail-File>
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright © 2003-2007 Barbie for Miss Barbell Productions.
+  Copyright (C) 2003-2012 Barbie for Miss Barbell Productions.
 
-  This library is free software; you can redistribute it and/or modify it under
-  the same terms as Perl itself, using the Artistic License.
-
-The full text of the licenses can be found in the Artistic file included with 
-this distribution, or in perlartistic file as part of Perl installation, in 
-the 5.8.1 release or later.
+  This module is free software; you can redistribute it and/or
+  modify it under the Artistic Licence v2.
 
 =cut

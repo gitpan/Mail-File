@@ -1,17 +1,28 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings;
+use 5.006;
+
 use ExtUtils::MakeMaker;
+
 WriteMakefile(
-    'NAME'		        => 'Mail::File',
-    'VERSION_FROM'	    => 'lib/Mail/File.pm',
-    'PREREQ_PM'		    => {
+    AUTHOR              => 'Barbie <barbie@cpan.org>',
+    NAME                => 'Mail::File',
+    VERSION_FROM        => 'lib/Mail/File.pm',
+    ABSTRACT            => 'Write mail messages to a plain text file',
+    NO_META             => 1,
+    PREREQ_PM           => {
+
+        # runtime prereqs
 		'File::Temp'        => 0,
 		'File::Path'        => 0,
 		'File::Basename'    => 0,
 		'Time::Piece'       => 0,
-		'Test::More'        => 0.47,
-	},
-	NO_META			=> 1,
 
-    ($] >= 5.005 ?
-      (ABSTRACT_FROM    => 'lib/Mail/File.pm',
-       AUTHOR           => 'Barbie <barbie@cpan.org>') : ()),
+        # build/test prereqs
+        'IO::File'          => '0',
+        'Test::More'        => '0.70',
+
+    }
 );

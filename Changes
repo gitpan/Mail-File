@@ -1,49 +1,61 @@
 Revision history for Perl module Mail::File.
 
-0.08	02/03/2007
-	- Added Time::Piece to the mix to ensure we have a valid date written
-	  to the file to conform to the Internet Mail RFC specs.
-	- Directory created only when we "send" the mail to disk. Also now
-	  checks we have created the directory before writing the file.
-	- Refined tests.
-	- Handwritten META.yml to conform to current specs.
-	- Changed all instances of LICENCE to LICENSE.
-	- Added META.yml test script.
-	- Added LICENSE and Artistic files.
-	- Added an examples directory. Nothing in it yet, except a request
-	  for interesting scripts.
-	- POD/README updates
-	- Devel::Cover - 99.2%
+0.09    05/08/2012
+        - removed License files from distro.
+        - Artistic License v2 now sole license.
+        - removed DSLIP info.
+        - spelling fixes. (thanks to Nicholas Bamber, Florian Schlichting &
+          Gregor Herrmann).
+        - added minimum perl version (5.006).
+        - reworked Makefile.PL for clarity.
+        - updated META.yml testing.
+        - added META.json
+        - added Change file tests
 
-0.07	21/03/2005
-	- more tests to fill the holes Devel::Cover found.
-	- Added DSLIP information
+0.08    02/03/2007
+        - Added Time::Piece to the mix to ensure we have a valid date written
+          to the file to conform to the Internet Mail RFC specs.
+        - Directory created only when we "send" the mail to disk. Also now
+          checks we have created the directory before writing the file.
+        - Refined tests.
+        - Handwritten META.yml to conform to current specs.
+        - Changed all instances of LICENCE to LICENSE.
+        - Added META.yml test script.
+        - Added LICENSE and Artistic files.
+        - Added an examples directory. Nothing in it yet, except a request
+          for interesting scripts.
+        - POD/README updates
+        - Devel::Cover - 99.2%
 
-0.06	19/03/2005
-	- reinserted structures
+0.07    21/03/2005
+        - more tests to fill the holes Devel::Cover found.
+        - Added DSLIP information
 
-0.05	26/01/2005
-	- removed unnecessary comments
-	- removed uncecessary Exporter functionality
+0.06    19/03/2005
+        - reinserted structures
 
-0.04  Tue Oct 28 13:41:16 GMTDT 2003
-	- extracated the cpan-testing directory out of Mail-File. This is now
-	  going to be a special distribution of it's own.
-	- Message now Body.
-	- X-Headers can be passed via the hash.
-	- sprintf overhead removed ... no idea why I did that!
+0.05    26/01/2005
+        - removed unnecessary comments
+        - removed uncecessary Exporter functionality
 
-0.03  Wed Oct  8 13:04:18 GMTDT 2003
-	- POD updates
+0.04    28/10/2003
+        - extracated the cpan-testing directory out of Mail-File. This is now
+          going to be a special distribution of it's own.
+        - Message now Body.
+        - X-Headers can be passed via the hash.
+        - sprintf overhead removed ... no idea why I did that!
 
-0.02  Tue Oct  7 17:37:44 GMTDT 2003
-	- cpan-testing files updated to use /.smoke/mailfiles 
-	  for reports directory.
-	- removed move-mailfiles.pl as the change above renders
-	  it obsolete.
-	- Mail::File creates the directory of the template (if
-	  there is one) if it can.
+0.03    08/10/2003
+        - POD updates
 
-0.01  Mon Oct  6 13:28:06 GMTDT 2003
-	- original version;
+0.02    07/10/2003
+        - cpan-testing files updated to use /.smoke/mailfiles
+          for reports directory.
+        - removed move-mailfiles.pl as the change above renders
+          it obsolete.
+        - Mail::File creates the directory of the template (if
+          there is one) if it can.
+
+0.01    06/10/2003
+        - original version;
 

@@ -5,6 +5,7 @@ use Test::More tests => 16;
 
 use Mail::File;
 use File::Path;
+use IO::File;
 
 my $path = 'mailfiles';
 my $temp = 'mailfiles/mail-XXXXXX.eml';
@@ -43,15 +44,15 @@ my $file = $mail->send();
 my $exists = (-r $file ? 1 : 0);
 is($exists,1);
 
-open FH, $file or die "Failed to open file [$file]: $!\n";
+my $fh = IO::File->new($file, 'r') or die "Failed to open file [$file]: $!\n";
 {
 	local $/ = undef;
-	my $mailfile = <FH>;
+	my $mailfile = <$fh>;
 
     for my $content (@content) {
         like($mailfile,qr/$content/is,"checking content includes '$content'");
     }
 }
-close FH;
+$fh->close;
 	
 rmtree $path;
