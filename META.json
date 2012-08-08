@@ -1,0 +1,56 @@
+{
+    "name": "Mail::File",
+    "version": "0.10",
+    "abstract": "Write mail messages to a plain text file",
+    "author": ["Barbie <barbie@cpan.org>"],
+
+    "license": "artistic_2",
+    "dynamic_config" : 0,
+    "release_status" : "stable",
+    "meta-spec": {
+        "version": "2",
+        "url": "http://search.cpan.org/dist/CPAN-Meta/lib/CPAN/Meta/Spec.pm"
+    },
+    "generated_by": "Hand 1.0",
+    "keywords" : [
+        "mail"
+    ],
+
+    "prereqs" : {
+        "runtime" : {
+            "requires" : {
+                "perl": "5.006",
+                "File::Basename": "0",
+                "File::Path": "0",
+                "File::Temp": "0",
+                "Time::Piece": "0"
+            }
+        },
+        "test" : {
+            "requires": {
+                "IO::File": "0",
+                "Test::More": "0.70"
+            },
+            "recommends": {
+                "Test::CPAN::Meta": "0",
+                "Test::CPAN::Meta::JSON": "0",
+                "Test::Pod": "1.00",
+                "Test::Pod::Coverage": "0.08"
+            }
+        }
+    },
+
+    "provides": {
+        "Mail::File": {
+            "file": "lib/Mail/File.pm",
+            "version": "0.10"
+        }
+    },
+    "no_index": {
+        "directory": ["t","examples"]
+    },
+
+    "resources": {
+        "bugtracker": { "web": "http://rt.cpan.org/Public/Dist/Display.html?Name=Mail-File" }
+    }
+}

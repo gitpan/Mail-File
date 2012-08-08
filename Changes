@@ -1,5 +1,9 @@
 Revision history for Perl module Mail::File.
 
+0.10	08/08/2012
+	- forgot to update the MANIFEST!
+        - Devel::Cover - 97.5%
+
 0.09    05/08/2012
         - removed License files from distro.
         - Artistic License v2 now sole license.

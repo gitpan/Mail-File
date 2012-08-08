@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:                     Mail-File
-version:                  0.09
+version:                  0.10
 abstract:                 Write mail messages to a plain text file
 author:
   - Barbie <barbie@cpan.org>
@@ -27,7 +27,7 @@ build_requires:
 provides:
   Mail::File:
     file:     lib/Mail/File.pm
-    version:  0.09
+    version:  0.10
 no_index:
   directory:
     - t
