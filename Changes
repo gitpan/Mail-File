@@ -1,10 +1,14 @@
 Revision history for Perl module Mail::File.
 
-0.10	08/08/2012
-	- forgot to update the MANIFEST!
+0.11    2013-07-14
+        - change file dates changed to meet W3CDTF standards.
+        - documentation updates.
+
+0.10	2012-08-08
+	    - forgot to update the MANIFEST!
         - Devel::Cover - 97.5%
 
-0.09    05/08/2012
+0.09    2012-08-05
         - removed License files from distro.
         - Artistic License v2 now sole license.
         - removed DSLIP info.
@@ -16,7 +20,7 @@ Revision history for Perl module Mail::File.
         - added META.json
         - added Change file tests
 
-0.08    02/03/2007
+0.08    2007-03-02
         - Added Time::Piece to the mix to ensure we have a valid date written
           to the file to conform to the Internet Mail RFC specs.
         - Directory created only when we "send" the mail to disk. Also now
@@ -31,28 +35,28 @@ Revision history for Perl module Mail::File.
         - POD/README updates
         - Devel::Cover - 99.2%
 
-0.07    21/03/2005
+0.07    2005-03-21
         - more tests to fill the holes Devel::Cover found.
         - Added DSLIP information
 
-0.06    19/03/2005
+0.06    2005-03-19
         - reinserted structures
 
-0.05    26/01/2005
+0.05    2005-01-26
         - removed unnecessary comments
         - removed uncecessary Exporter functionality
 
-0.04    28/10/2003
+0.04    2003-10-28
         - extracated the cpan-testing directory out of Mail-File. This is now
           going to be a special distribution of it's own.
         - Message now Body.
         - X-Headers can be passed via the hash.
         - sprintf overhead removed ... no idea why I did that!
 
-0.03    08/10/2003
+0.03    2003-10-08
         - POD updates
 
-0.02    07/10/2003
+0.02    2003-10-07
         - cpan-testing files updated to use /.smoke/mailfiles
           for reports directory.
         - removed move-mailfiles.pl as the change above renders
@@ -60,6 +64,5 @@ Revision history for Perl module Mail::File.
         - Mail::File creates the directory of the template (if
           there is one) if it can.
 
-0.01    06/10/2003
+0.01    2003-10-06
         - original version;
-

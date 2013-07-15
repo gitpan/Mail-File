@@ -1,6 +1,6 @@
 {
     "name": "Mail::File",
-    "version": "0.10",
+    "version": "0.11",
     "abstract": "Write mail messages to a plain text file",
     "author": ["Barbie <barbie@cpan.org>"],
 
@@ -43,7 +43,7 @@
     "provides": {
         "Mail::File": {
             "file": "lib/Mail/File.pm",
-            "version": "0.10"
+            "version": "0.11"
         }
     },
     "no_index": {
@@ -51,6 +51,7 @@
     },
 
     "resources": {
+        "license": "http://www.perlfoundation.org/artistic_license_2_0",
         "bugtracker": { "web": "http://rt.cpan.org/Public/Dist/Display.html?Name=Mail-File" }
     }
 }

@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.10';
+$VERSION = '0.11';
 
 #----------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ Mail::File - mail module which writes to a flat file.
 =head1 DESCRIPTION
 
 This module was written to overcome the problem of sending mail messages, 
-where there is no mail application is available. 
+where there is no mail application available. 
 
 The aim of the module is to write messages to a text file, that will format
 the contents to include all the key elements of the message, such that the 
@@ -80,7 +80,7 @@ my %autosubs = map {$_ => 1} qw( From To Cc Bcc Subject Body );
 Create a new mailer object. Returns the object on success or undef on
 failure.
 
-All the following can be pass as part of an anonymous hash:
+All the following can be passed as part of an anonymous hash:
 
   From
   To
@@ -92,7 +92,7 @@ All the following can be pass as part of an anonymous hash:
 
 The template entry is optional, and is only supplied when you call the 
 constructor. The format of the string to template follows the format as
-fox File::Temp. However, a suffix is automatically extracted. An example
+for File::Temp. However, a suffix is automatically extracted. An example
 template would be:
 
   mail-XXXX.tmp
@@ -256,9 +256,9 @@ RT: L<http://rt.cpan.org/Public/Dist/Display.html?Name=Mail-File>
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2003-2012 Barbie for Miss Barbell Productions.
+  Copyright (C) 2003-2013 Barbie for Miss Barbell Productions.
 
-  This module is free software; you can redistribute it and/or
+  This distribution is free software; you can redistribute it and/or
   modify it under the Artistic Licence v2.
 
 =cut
