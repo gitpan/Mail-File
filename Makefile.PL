@@ -8,7 +8,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
     AUTHOR              => 'Barbie <barbie@cpan.org>',
-    NAME                => 'Mail::File',
+    NAME                => 'Mail-File',
     VERSION_FROM        => 'lib/Mail/File.pm',
     ABSTRACT            => 'Write mail messages to a plain text file',
     NO_META             => 1,

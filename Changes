@@ -1,4 +1,9 @@
-Revision history for Perl module Mail::File.
+Revision history for Mail-File
+==============================
+
+0.12    2014-05-21
+        - fixed distribution name in META.
+        - added git repo to resources.
 
 0.11    2013-07-14
         - change file dates changed to meet W3CDTF standards.

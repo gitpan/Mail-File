@@ -4,7 +4,7 @@ use warnings;
 use strict;
 
 use vars qw($VERSION $AUTOLOAD);
-$VERSION = '0.11';
+$VERSION = '0.12';
 
 #----------------------------------------------------------------------------
 
@@ -256,7 +256,7 @@ RT: L<http://rt.cpan.org/Public/Dist/Display.html?Name=Mail-File>
 
 =head1 COPYRIGHT AND LICENSE
 
-  Copyright (C) 2003-2013 Barbie for Miss Barbell Productions.
+  Copyright (C) 2003-2014 Barbie for Miss Barbell Productions.
 
   This distribution is free software; you can redistribute it and/or
   modify it under the Artistic Licence v2.
