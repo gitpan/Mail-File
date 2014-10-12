@@ -1,6 +1,9 @@
 Revision history for Mail-File
 ==============================
 
+0.13    2014-10-12
+        - fixed license fields in META.json to be lists.
+
 0.12    2014-05-21
         - fixed distribution name in META.
         - added git repo to resources.
